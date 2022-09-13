@@ -1,0 +1,29 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+    <h2>Classification cat or dog</h2>
+
+    
+    <br>
+   
+    <form method="post" enctype="multipart/form-data" action="indextest">
+  
+ {% csrf_token %}
+ <div class="col-md-4 col-sm-4"><label for="fname">Upload Image File Here:</label> </div> <input name="filepath" type="file"><br><br>
+ <br>
+
+ 
+ <input type="submit" value="Submit" ></div>
+
+
+ <img src = {{filepathname}} alt='imagename'>
+ {{filepathname}}
+ 
+<h1>This picture is {{labelll}}.</h1>
+
+</form>
+<br>
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+
+<form action="" method="Post">
+    {% csrf_token %}
+    <input name="city_name" placeholder="請輸入名稱">
+    <input type="submit" value="查詢">
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>名稱</th>
+            <th>價格</th>
+            <th>連結</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ticket in tickets %}
+        <tr>
+            <td>{{ ticket.title }}</td>
+            <td>{{ ticket.price }}</td>
+            <td><a href={{ticket.link}}>連結</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
