@@ -1,0 +1,3 @@
+# djangoproject-pythonfile
+
+hello
