@@ -1,0 +1,29 @@
+<form action="" method="Post">
+    {% csrf_token %}
+    <input name="gpu_name1" placeholder="輸入gpu名稱">
+    <!--  <input name="cpu_name2" placeholder="輸入cpu2名稱">-->
+    <input type="submit" value="查詢">
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>gpu稱號</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>分數</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        {% for gpurank in gpuranks %}
+        <tr>
+            <td>{{ gpurank.gpuone}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ gpurank.score_one }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

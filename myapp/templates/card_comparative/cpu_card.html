@@ -1,0 +1,63 @@
+<form action="" method="Post">
+    {% csrf_token %}
+    <input name="cpu_name1" placeholder="輸入cpu名稱">
+    <input name="cpu_name2" placeholder="輸入cpu2名稱">
+    <input type="submit" value="查詢">
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>cpu1稱號</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>分數</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cpurank in cpuranks %}
+        <tr>
+            <td>{{ cpurank.cpuone}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ cpurank.score_one }}</td>
+        {% endfor %}
+    </tbody>
+
+    <thead>
+        <tr>
+            <th>cpu2稱號</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>分數</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        {% for cpurank in cpuranks %}
+        <tr>
+            <td>{{ cpurank.cputwo}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ cpurank.score_two }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+    <thead>
+        <tr>
+            <th>獲勝cpu</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        {% for cpurank in cpuranks %}
+        <tr>
+            <td>{{ cpurank.cpuwinner}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
